@@ -160,3 +160,10 @@ h2 { margin: 0; font-size: 1.1rem; }
   .order { position: static; height: auto; border-left: 0; }
   .main { padding: 18px 16px; }
 }
+
+/* icons */
+.cat-icon, .add-btn svg {
+  width: 18px; height: 18px; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.add-btn { display: grid; place-items: center; padding: 0; }

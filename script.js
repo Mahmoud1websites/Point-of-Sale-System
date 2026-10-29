@@ -2,27 +2,27 @@
 // Add a real photo by putting a path in `image`, e.g. image: "img/almond.jpg".
 // If `image` is empty, the emoji is shown on a coloured tile instead.
 const products = [
-  { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "" },
-  { id: 2, name: "Smoke Tenderloin Slice Croissant", desc: "Plain croissant with smoked tenderloin beef and vegetables", price: 10.01, unit: "2 pcs", category: "Croissant", emoji: "🥐", color: "#f9d5b8", image: "" },
-  { id: 3, name: "Berry Whipped Cream Croissant", desc: "Sweet croissant with blueberries and strawberries inside", price: 8.92, unit: "3 pcs", category: "Croissant", emoji: "🍓", color: "#fbd6dc", image: "" },
-  { id: 4, name: "Sweet Granulated Sugar Croissant", desc: "Croissant dusted with granulated sugar", price: 5.58, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#e6eef5", image: "" },
-  { id: 5, name: "Chocolate Chocochips Croissant", desc: "Croissant filled with chocolate and chocochips", price: 11.03, unit: "2 pcs", category: "Croissant", emoji: "🍫", color: "#e7d8cf", image: "" },
-  { id: 6, name: "Basic Croissant La Ta Dhore", desc: "Classic butter croissant", price: 3.2, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#eceae6", image: "" },
-  { id: 7, name: "Signature Maple Box", desc: "Chef's box of three maple glazed pastries", price: 14.5, unit: "box", category: "Signature", emoji: "🎁", color: "#fff0c9", image: "" },
-  { id: 8, name: "Belgian Waffle", desc: "Crispy waffle with maple syrup and butter", price: 6.75, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fbe7bd", image: "" },
-  { id: 9, name: "Strawberry Waffle", desc: "Waffle topped with fresh strawberries and cream", price: 8.25, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fcd9de", image: "" },
-  { id: 10, name: "Cappuccino", desc: "Espresso with steamed milk foam", price: 3.5, unit: "cup", category: "Coffee", emoji: "☕", color: "#e9dccf", image: "" },
-  { id: 11, name: "Iced Latte", desc: "Cold espresso with milk over ice", price: 4.0, unit: "cup", category: "Coffee", emoji: "🧋", color: "#e4ecef", image: "" },
-  { id: 12, name: "Vanilla Ice Cream", desc: "Two scoops of vanilla bean ice cream", price: 4.75, unit: "2 scoops", category: "Ice Cream", emoji: "🍨", color: "#fff4d6", image: "" }
+  { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "img/products/almond-croissant.svg" },
+  { id: 2, name: "Smoke Tenderloin Slice Croissant", desc: "Plain croissant with smoked tenderloin beef and vegetables", price: 10.01, unit: "2 pcs", category: "Croissant", emoji: "🥐", color: "#f9d5b8", image: "img/products/smoke-croissant.svg" },
+  { id: 3, name: "Berry Whipped Cream Croissant", desc: "Sweet croissant with blueberries and strawberries inside", price: 8.92, unit: "3 pcs", category: "Croissant", emoji: "🍓", color: "#fbd6dc", image: "img/products/berry-croissant.svg" },
+  { id: 4, name: "Sweet Granulated Sugar Croissant", desc: "Croissant dusted with granulated sugar", price: 5.58, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#e6eef5", image: "img/products/sugar-croissant.svg" },
+  { id: 5, name: "Chocolate Chocochips Croissant", desc: "Croissant filled with chocolate and chocochips", price: 11.03, unit: "2 pcs", category: "Croissant", emoji: "🍫", color: "#e7d8cf", image: "img/products/choco-croissant.svg" },
+  { id: 6, name: "Basic Croissant La Ta Dhore", desc: "Classic butter croissant", price: 3.2, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#eceae6", image: "img/products/basic-croissant.svg" },
+  { id: 7, name: "Signature Maple Box", desc: "Chef's box of three maple glazed pastries", price: 14.5, unit: "box", category: "Signature", emoji: "🎁", color: "#fff0c9", image: "img/products/signature-box.svg" },
+  { id: 8, name: "Belgian Waffle", desc: "Crispy waffle with maple syrup and butter", price: 6.75, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fbe7bd", image: "img/products/belgian-waffle.svg" },
+  { id: 9, name: "Strawberry Waffle", desc: "Waffle topped with fresh strawberries and cream", price: 8.25, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fcd9de", image: "img/products/strawberry-waffle.svg" },
+  { id: 10, name: "Cappuccino", desc: "Espresso with steamed milk foam", price: 3.5, unit: "cup", category: "Coffee", emoji: "☕", color: "#e9dccf", image: "img/products/cappuccino.svg" },
+  { id: 11, name: "Iced Latte", desc: "Cold espresso with milk over ice", price: 4.0, unit: "cup", category: "Coffee", emoji: "🧋", color: "#e4ecef", image: "img/products/iced-latte.svg" },
+  { id: 12, name: "Vanilla Ice Cream", desc: "Two scoops of vanilla bean ice cream", price: 4.75, unit: "2 scoops", category: "Ice Cream", emoji: "🍨", color: "#fff4d6", image: "img/products/vanilla-ice-cream.svg" }
 ];
 
 const categories = [
-  { name: "All", icon: "✦" },
-  { name: "Signature", icon: "★" },
-  { name: "Croissant", icon: "🥐" },
-  { name: "Waffle", icon: "🧇" },
-  { name: "Coffee", icon: "☕" },
-  { name: "Ice Cream", icon: "🍨" }
+  { name: "All", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/></svg>" },
+  { name: "Signature", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3Z\"/></svg>" },
+  { name: "Croissant", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 15c0-3 2-5 4-6l2 3 3-5 3 5 2-3c2 1 4 3 4 6-3-1-5 0-7 2-2-2-4-3-7-2Z\"/></svg>" },
+  { name: "Waffle", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3\"/><path d=\"M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16\"/></svg>" },
+  { name: "Coffee", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9Z\"/><path d=\"M16 10h1.5a2.5 2.5 0 0 1 0 5H16\"/><path d=\"M8 3v2M12 3v2\"/></svg>" },
+  { name: "Ice Cream", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 12l4 9 4-9\"/><path d=\"M7 12a5 5 0 1 1 10 0H7Z\"/></svg>" }
 ];
 
 let order = [];            // items: { id, name, price, quantity, emoji, color, image }
@@ -104,7 +104,7 @@ function renderCategories() {
     const btn = document.createElement("button");
     btn.className = c.name === activeCategory ? "pill active" : "pill";
     btn.setAttribute("data-cat", c.name);
-    btn.textContent = c.icon + " " + c.name;
+    btn.innerHTML = c.icon + "<span>" + c.name + "</span>";
     categoriesEl.appendChild(btn);
   }
 }
@@ -123,7 +123,7 @@ function renderProducts() {
       card.className = "card";
       card.innerHTML =
         thumbHTML(p) +
-        '<button class="add-btn" data-add="' + p.id + '" aria-label="Add ' + p.name + ' to order">🛒</button>' +
+        '<button class="add-btn" data-add="' + p.id + '" aria-label="Add ' + p.name + ' to order"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"20\" r=\"1.6\"/><circle cx=\"18\" cy=\"20\" r=\"1.6\"/><path d=\"M3 4h2.5l2.2 11h10.6l2-8H6.4\"/></svg></button>' +
         '<div class="name">' + p.name + "</div>" +
         '<div class="desc">' + p.desc + "</div>" +
         '<div class="price">' + formatMoney(p.price) + " <small>/ " + p.unit + "</small></div>";
