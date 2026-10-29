@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Winkel POS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar" aria-label="Main">
+      <div class="logo">W</div>
+      <button class="nav-btn active" title="Menu" aria-label="Menu">▦</button>
+      <button class="nav-btn" id="history-btn" title="Sales history" aria-label="Sales history">◔</button>
+      <button class="nav-btn" id="custom-btn" title="Add custom item" aria-label="Add custom item">＋</button>
+    </nav>
+
+    <main class="main">
+      <header class="head">
+        <div>
+          <h1>Welcome, Cashier</h1>
+          <p class="sub">Winkel POS · <span id="clock"></span></p>
+        </div>
+        <div class="search-row">
+          <input type="text" id="search" placeholder="Search product...">
+          <button id="reset-filters" class="icon-btn" title="Reset filters" aria-label="Reset filters">⚲</button>
+        </div>
+      </header>
+
+      <div id="categories" class="categories"></div>
+      <div id="products" class="products"></div>
+
+      <section id="custom-box" class="box hidden">
+        <h2>Add custom item</h2>
+        <div class="row">
+          <input type="text" id="custom-name" placeholder="Item name">
+          <input type="number" id="custom-price" placeholder="Price" min="0" step="0.01">
+          <button id="add-custom" class="primary">Add to order</button>
+        </div>
+      </section>
+
+      <section id="history-box" class="box hidden">
+        <h2>Sales history (this session)</h2>
+        <p id="history-empty" class="empty">No completed sales yet.</p>
+        <ul id="history-list"></ul>
+      </section>
+    </main>
+
+    <aside class="order">
+      <div class="order-head">
+        <h2>Current Order</h2>
+        <button id="clear-btn" class="clear-btn">Clear order</button>
+      </div>
+
+      <p id="empty-message" class="empty">No products selected. Tap the cart button on a product to start.</p>
+      <ul id="order-list" class="order-list"></ul>
+
+      <div class="summary">
+        <div class="line"><span>Items</span><b id="item-count">0</b></div>
+        <div class="line"><span>Subtotal</span><b id="subtotal">$0.00</b></div>
+        <div class="line"><span>Discount (10% over $100)</span><b id="discount">-$0.00</b></div>
+        <div class="line"><span>Sales tax (<span id="tax-rate"></span>)</span><b id="tax">$0.00</b></div>
+      </div>
+      <div class="total"><span>Total</span><b id="final-total">$0.00</b></div>
+      <button id="pay-btn" class="pay">Continue to Payment</button>
+    </aside>
+  </div>
+
+  <div id="receipt-overlay" class="overlay hidden">
+    <div class="receipt">
+      <h2>Receipt</h2>
+      <p id="receipt-date" class="sub"></p>
+      <div id="receipt-items"></div>
+      <div class="receipt-line"><span>Subtotal</span><span id="r-subtotal"></span></div>
+      <div class="receipt-line"><span>Discount</span><span id="r-discount"></span></div>
+      <div class="receipt-line"><span>Sales tax</span><span id="r-tax"></span></div>
+      <div class="receipt-line bold"><span>Total</span><span id="r-total"></span></div>
+      <label class="paid-row">Amount paid
+        <input type="number" id="amount-paid" min="0" step="0.01">
+      </label>
+      <div class="receipt-line"><span>Change</span><span id="r-change">$0.00</span></div>
+      <p id="paid-error" class="error"></p>
+      <button id="new-order-btn" class="pay">Finish and start new order</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
