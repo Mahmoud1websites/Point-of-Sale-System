@@ -1,7 +1,8 @@
 :root {
-  --orange: #f26a0f;
-  --orange-soft: #fbd9c0;
-  --orange-bg: #fff1e6;
+  --brand: #002c3d;
+  --brand-dark: #001f2b;
+  --brand-soft: #b9ccd4;
+  --brand-bg: #e6eef1;
   --bg: #f4f4f4;
   --card: #ffffff;
   --ink: #1c1c1e;
@@ -20,7 +21,7 @@ body {
 button, input { font: inherit; }
 button { cursor: pointer; }
 button:focus-visible, input:focus-visible {
-  outline: 3px solid #ffc9a3; outline-offset: 2px;
+  outline: 3px solid #7fa6b5; outline-offset: 2px;
 }
 .hidden { display: none !important; }
 
@@ -34,15 +35,20 @@ button:focus-visible, input:focus-visible {
   gap: 10px; padding: 18px 0; position: sticky; top: 0; height: 100vh;
 }
 .logo {
-  width: 38px; height: 38px; border-radius: 10px; background: var(--orange);
-  color: #fff; font-weight: 800; display: grid; place-items: center; margin-bottom: 14px;
+  width: 40px; height: 40px; border-radius: 10px;
+  display: block; margin-bottom: 14px;
 }
 .nav-btn {
   width: 42px; height: 42px; border: 0; border-radius: 10px;
-  background: transparent; color: var(--muted); font-size: 1.2rem;
+  background: transparent; color: var(--muted);
+  display: grid; place-items: center; padding: 0;
 }
-.nav-btn:hover { background: var(--orange-bg); color: var(--orange); }
-.nav-btn.active { color: var(--orange); background: var(--orange-bg); }
+.nav-btn svg {
+  width: 22px; height: 22px; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.nav-btn:hover { background: var(--brand-bg); color: var(--brand); }
+.nav-btn.active { color: var(--brand); background: var(--brand-bg); }
 
 /* main */
 .main { padding: 28px 28px 40px; min-width: 0; }
@@ -66,7 +72,7 @@ h2 { margin: 0; font-size: 1.1rem; }
   border: 0; background: #fff; border-radius: 10px; padding: 11px 18px;
   font-size: 0.9rem; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
-.pill.active { background: var(--orange); color: #fff; }
+.pill.active { background: var(--brand); color: #fff; }
 
 .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; }
 .card { background: var(--card); border-radius: 12px; padding: 10px; position: relative; }
@@ -77,13 +83,13 @@ h2 { margin: 0; font-size: 1.1rem; }
 .card .thumb img { width: 100%; height: 100%; object-fit: cover; }
 .add-btn {
   position: absolute; top: 18px; right: 18px; width: 34px; height: 34px;
-  border: 0; border-radius: 8px; background: rgba(255,255,255,0.85); color: var(--orange);
+  border: 0; border-radius: 8px; background: rgba(255,255,255,0.85); color: var(--brand);
   font-size: 1rem;
 }
-.add-btn:hover { background: var(--orange); color: #fff; }
+.add-btn:hover { background: var(--brand); color: #fff; }
 .card .name { font-weight: 700; margin: 12px 4px 4px; line-height: 1.25; }
 .card .desc { color: var(--muted); font-size: 0.78rem; margin: 0 4px 10px; min-height: 2.4em; }
-.card .price { margin: 0 4px 4px; color: var(--orange); font-size: 1.25rem; font-weight: 800; }
+.card .price { margin: 0 4px 4px; color: var(--brand); font-size: 1.25rem; font-weight: 800; }
 .card .price small { color: var(--muted); font-weight: 400; font-size: 0.8rem; }
 
 .box { background: #fff; border-radius: 12px; padding: 18px; margin-top: 24px; }
@@ -91,7 +97,8 @@ h2 { margin: 0; font-size: 1.1rem; }
 .box input {
   flex: 1; min-width: 140px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px;
 }
-.primary { background: var(--orange); color: #fff; border: 0; border-radius: 8px; padding: 11px 18px; font-weight: 600; }
+.primary { background: var(--brand); color: #fff; border: 0; border-radius: 8px; padding: 11px 18px; font-weight: 600; }
+.primary:hover { background: var(--brand-dark); }
 #history-list { margin: 10px 0 0; padding-left: 18px; }
 .empty { color: var(--muted); }
 
@@ -101,7 +108,7 @@ h2 { margin: 0; font-size: 1.1rem; }
   display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh;
 }
 .order-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-.clear-btn { border: 0; background: var(--orange-bg); color: var(--orange); border-radius: 8px; padding: 8px 12px; font-size: 0.8rem; font-weight: 600; }
+.clear-btn { border: 0; background: var(--brand-bg); color: var(--brand); border-radius: 8px; padding: 8px 12px; font-size: 0.8rem; font-weight: 600; }
 .order-list { list-style: none; margin: 0; padding: 0; flex: 1; overflow-y: auto; min-height: 80px; }
 .item { display: flex; gap: 12px; margin-bottom: 16px; }
 .item .thumb {
@@ -112,13 +119,13 @@ h2 { margin: 0; font-size: 1.1rem; }
 .item .info { flex: 1; min-width: 0; }
 .item .iname { font-size: 0.85rem; font-weight: 700; line-height: 1.25; }
 .item .row2 { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
-.item .iprice { color: var(--orange); font-weight: 800; }
+.item .iprice { color: var(--brand); font-weight: 800; }
 .qty { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; }
 .qty button {
-  width: 22px; height: 22px; border: 0; border-radius: 5px; background: var(--orange);
+  width: 22px; height: 22px; border: 0; border-radius: 5px; background: var(--brand);
   color: #fff; line-height: 1; padding: 0;
 }
-.qty .plus { background: var(--orange-soft); color: var(--orange); }
+.qty .plus { background: var(--brand-soft); color: var(--brand); }
 .remove { border: 0; background: none; color: var(--danger); font-size: 0.72rem; padding: 2px 0; margin-top: 2px; }
 
 .summary { background: #f7f7f7; border-radius: 10px; padding: 12px 14px; margin-top: 12px; font-size: 0.82rem; }
@@ -131,10 +138,10 @@ h2 { margin: 0; font-size: 1.1rem; }
 }
 .total b { font-size: 1.25rem; }
 .pay {
-  margin-top: 14px; border: 0; border-radius: 8px; background: var(--orange);
+  margin-top: 14px; border: 0; border-radius: 8px; background: var(--brand);
   color: #fff; padding: 15px; font-weight: 700; width: 100%;
 }
-.pay:hover { background: #d95a05; }
+.pay:hover { background: var(--brand-dark); }
 
 /* receipt */
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
