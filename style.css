@@ -167,3 +167,25 @@ h2 { margin: 0; font-size: 1.1rem; }
   stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
 }
 .add-btn { display: grid; place-items: center; padding: 0; }
+
+/* add-product form */
+.form-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 12px;
+}
+.box select {
+  padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff;
+}
+.box .file-box {
+  grid-column: 1 / -1; display: flex; align-items: center; gap: 12px;
+  border: 2px dashed var(--brand-soft); border-radius: 10px; padding: 14px;
+  color: var(--muted); cursor: pointer; background: var(--brand-bg);
+}
+.box .file-box:hover { border-color: var(--brand); }
+.box .file-box:focus-within { outline: 3px solid #7fa6b5; outline-offset: 2px; }
+.box .file-box input {
+  position: absolute; width: 1px; height: 1px; min-width: 0; padding: 0;
+  opacity: 0; overflow: hidden;
+}
+.preview { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; }
+.form-grid .primary { grid-column: 1 / -1; padding: 13px; }
+@media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
