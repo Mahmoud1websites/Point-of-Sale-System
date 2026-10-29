@@ -1,20 +1,7 @@
 // ---------- DATA ----------
 // Add a real photo by putting a path in `image`, e.g. image: "img/almond.jpg".
 // If `image` is empty, the emoji is shown on a coloured tile instead.
-const products = [
-  { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "img/products/almond-croissant.svg" },
-  { id: 2, name: "Smoke Tenderloin Slice Croissant", desc: "Plain croissant with smoked tenderloin beef and vegetables", price: 10.01, unit: "2 pcs", category: "Croissant", emoji: "🥐", color: "#f9d5b8", image: "img/products/smoke-croissant.svg" },
-  { id: 3, name: "Berry Whipped Cream Croissant", desc: "Sweet croissant with blueberries and strawberries inside", price: 8.92, unit: "3 pcs", category: "Croissant", emoji: "🍓", color: "#fbd6dc", image: "img/products/berry-croissant.svg" },
-  { id: 4, name: "Sweet Granulated Sugar Croissant", desc: "Croissant dusted with granulated sugar", price: 5.58, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#e6eef5", image: "img/products/sugar-croissant.svg" },
-  { id: 5, name: "Chocolate Chocochips Croissant", desc: "Croissant filled with chocolate and chocochips", price: 11.03, unit: "2 pcs", category: "Croissant", emoji: "🍫", color: "#e7d8cf", image: "img/products/choco-croissant.svg" },
-  { id: 6, name: "Basic Croissant La Ta Dhore", desc: "Classic butter croissant", price: 3.2, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#eceae6", image: "img/products/basic-croissant.svg" },
-  { id: 7, name: "Signature Maple Box", desc: "Chef's box of three maple glazed pastries", price: 14.5, unit: "box", category: "Signature", emoji: "🎁", color: "#fff0c9", image: "img/products/signature-box.svg" },
-  { id: 8, name: "Belgian Waffle", desc: "Crispy waffle with maple syrup and butter", price: 6.75, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fbe7bd", image: "img/products/belgian-waffle.svg" },
-  { id: 9, name: "Strawberry Waffle", desc: "Waffle topped with fresh strawberries and cream", price: 8.25, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fcd9de", image: "img/products/strawberry-waffle.svg" },
-  { id: 10, name: "Cappuccino", desc: "Espresso with steamed milk foam", price: 3.5, unit: "cup", category: "Coffee", emoji: "☕", color: "#e9dccf", image: "img/products/cappuccino.svg" },
-  { id: 11, name: "Iced Latte", desc: "Cold espresso with milk over ice", price: 4.0, unit: "cup", category: "Coffee", emoji: "🧋", color: "#e4ecef", image: "img/products/iced-latte.svg" },
-  { id: 12, name: "Vanilla Ice Cream", desc: "Two scoops of vanilla bean ice cream", price: 4.75, unit: "2 scoops", category: "Ice Cream", emoji: "🍨", color: "#fff4d6", image: "img/products/vanilla-ice-cream.svg" }
-];
+const products = [];
 
 const categories = [
   { name: "All", icon: "<svg class=\"cat-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/></svg>" },
@@ -132,7 +119,10 @@ function renderProducts() {
     }
   }
   if (shown === 0) {
-    productsEl.innerHTML = '<p class="empty">No products match your search.</p>';
+    const message = products.length === 0
+      ? "No products available. Add a custom item to get started."
+      : "No products match your search.";
+    productsEl.innerHTML = '<p class="empty">' + message + "</p>";
   }
 }
 
