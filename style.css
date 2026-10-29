@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
   background:
-    linear-gradient(135deg, rgba(199, 199, 199, 0.356), rgba(1, 66, 91, 0.537)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.768), rgba(5, 125, 173, 0.429)),
     url("img/bgs.jpg") center / cover fixed no-repeat,
     #072987b1;
   color: var(--ink);
