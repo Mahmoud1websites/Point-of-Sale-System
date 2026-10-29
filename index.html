@@ -69,6 +69,7 @@
     </main>
 
     <aside class="order">
+      <div class="order-timer"><i id="order-timer-bar"></i></div>
       <div class="order-head">
         <h2>Current Order</h2>
         <button id="clear-btn" class="clear-btn">Clear order</button>
@@ -105,7 +106,12 @@
       <button id="new-order-btn" class="pay">Finish and start new order</button>
     </div>
   </div>
+<button id="cart-fab" class="cart-fab" aria-label="Open order">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H6"/></svg>
+  <span id="fab-count">0</span>
+</button>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+<script src="order-drawer.js"></script>
 </body>
 </html>

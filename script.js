@@ -2,7 +2,7 @@
 // Add a real photo by putting a path in `image`, e.g. image: "img/almond.jpg".
 // If `image` is empty, the emoji is shown on a coloured tile instead.
 const products = [
-  { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "img/products/almond-croissant.svg" },
+  { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "img/logo.svg" },
   { id: 2, name: "Smoke Tenderloin Slice Croissant", desc: "Plain croissant with smoked tenderloin beef and vegetables", price: 10.01, unit: "2 pcs", category: "Croissant", emoji: "🥐", color: "#f9d5b8", image: "img/products/smoke-croissant.svg" },
   { id: 3, name: "Berry Whipped Cream Croissant", desc: "Sweet croissant with blueberries and strawberries inside", price: 8.92, unit: "3 pcs", category: "Croissant", emoji: "🍓", color: "#fbd6dc", image: "img/products/berry-croissant.svg" },
   { id: 4, name: "Sweet Granulated Sugar Croissant", desc: "Croissant dusted with granulated sugar", price: 5.58, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#e6eef5", image: "img/products/sugar-croissant.svg" },
