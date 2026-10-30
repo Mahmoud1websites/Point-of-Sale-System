@@ -715,3 +715,57 @@ h2 {
   .app { grid-template-columns: 1fr; }
   .order { width: 100%; }
 }
+/* push content instead of covering it (desktop) */
+.main {
+  transition: margin-right .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (min-width: 1051px) {
+  .app:has(.order.open) .main {
+    margin-right: 360px;
+  }
+
+  /* keep the cart button visible next to the drawer */
+  body:has(.order.open) .cart-fab {
+    right: 382px;
+  }
+}
+
+.cart-fab {
+  transition: transform .2s, right .5s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* tablet/mobile: drawer is full width, so keep the button above it to close it */
+@media (max-width: 1050px) {
+  .cart-fab {
+    z-index: 25;
+  }
+}
+
+
+
+@media (max-width: 1050px) {
+  /* cart button goes to the top-right while the cart is open */
+  body:has(.order.open) .cart-fab {
+    right: 16px;
+    bottom: auto;
+    top: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  /* make room so it doesn't cover "Clear order" */
+  .order-head {
+    padding-right: 64px;
+  }
+
+  /* keep the cart items clear of the bottom edge */
+  .order {
+    padding-bottom: 24px;
+  }
+}
+
+/* put "-" on the left and "+" on the right */
+.qty {
+  flex-direction: row-reverse;
+}

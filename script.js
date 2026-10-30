@@ -2,29 +2,17 @@
 // Add a real photo by putting a path in `image`, e.g. image: "img/almond.jpg".
 // If `image` is empty, the emoji is shown on a coloured tile instead.
 const products = [
-  { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "img/almond-croissant.jpg" },
-
-
-
-
-
-  { id: 2, name: "Smoke Tenderloin Slice Croissant", desc: "Plain croissant with smoked tenderloin beef and vegetables", price: 10.01, unit: "2 pcs", category: "Croissant", emoji: "🥐", color: "#f9d5b8", image: "img/vanilla-ice-cream.jpg" },
-  { id: 3, name: "Berry Whipped Cream Croissant", desc: "Sweet croissant with blueberries and strawberries inside", price: 8.92, unit: "3 pcs", category: "Croissant", emoji: "🍓", color: "#fbd6dc", image: "img/choco-croissant.jpg" },
-  { id: 4, name: "Sweet Granulated Sugar Croissant", desc: "Croissant dusted with granulated sugar", price: 5.58, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#e6eef5", image: "img/belgian-waffle.jpg" },
-  { id: 5, name: "Chocolate Chocochips Croissant", desc: "Croissant filled with chocolate and chocochips", price: 11.03, unit: "2 pcs", category: "Croissant", emoji: "🍫", color: "#e7d8cf", image: "img/basic-croissant.jpg" },
-
-
-
-
-
-  { id: 6, name: "Basic Croissant La Ta Dhore", desc: "Classic butter croissant", price: 3.2, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#eceae6", image: "img/iced-latte.jpg" },
-
-
-  { id: 7, name: "Signature Maple Box", desc: "Chef's box of three maple glazed pastries", price: 14.5, unit: "box", category: "Signature", emoji: "🎁", color: "#fff0c9", image: "img/signature-box.jpg" },
-  { id: 8, name: "Belgian Waffle", desc: "Crispy waffle with maple syrup and butter", price: 6.75, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fbe7bd", image: "img/belgian-waffle.jpg" },
-  { id: 9, name: "Strawberry Waffle", desc: "Waffle topped with fresh strawberries and cream", price: 8.25, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fcd9de", image: "img/smoke-croissant.jpg" },
-  { id: 10, name: "Cappuccino", desc: "Espresso with steamed milk foam", price: 3.5, unit: "cup", category: "Ice Cream", emoji: "☕", color: "#e9dccf", image: "img/cappuccino.jpg" },
-  { id: 11, name: "Iced Latte", desc: "Cold espresso with milk over ice", price: 4.0, unit: "cup", category: "Coffee", emoji: "🧋", color: "#e4ecef", image: "img/iced-latte.jpg" }
+    { id: 1, name: "Almond Brown Sugar Croissant", desc: "Sweet croissant with topping almonds and brown sugar", price: 12.98, unit: "3 pcs", category: "Croissant", emoji: "🥐", color: "#fde3c8", image: "img/almond-croissant.jpg" },
+    { id: 2, name: "Smoke Tenderloin Slice Croissant", desc: "Plain croissant with smoked tenderloin beef and vegetables", price: 10.01, unit: "2 pcs", category: "Croissant", emoji: "🥐", color: "#f9d5b8", image: "img/vanilla-ice-cream.jpg" },
+    { id: 3, name: "Berry Whipped Cream Croissant", desc: "Sweet croissant with blueberries and strawberries inside", price: 8.92, unit: "3 pcs", category: "Croissant", emoji: "🍓", color: "#fbd6dc", image: "img/choco-croissant.jpg" },
+    { id: 4, name: "Sweet Granulated Sugar Croissant", desc: "Croissant dusted with granulated sugar", price: 5.58, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#e6eef5", image: "img/belgian-waffle.jpg" },
+    { id: 5, name: "Chocolate Chocochips Croissant", desc: "Croissant filled with chocolate and chocochips", price: 11.03, unit: "2 pcs", category: "Croissant", emoji: "🍫", color: "#e7d8cf", image: "img/basic-croissant.jpg" },
+    { id: 6, name: "Basic Croissant La Ta Dhore", desc: "Classic butter croissant", price: 3.2, unit: "1 pc", category: "Croissant", emoji: "🥐", color: "#eceae6", image: "img/iced-latte.jpg" },
+    { id: 7, name: "Signature Maple Box", desc: "Chef's box of three maple glazed pastries", price: 14.5, unit: "box", category: "Signature", emoji: "🎁", color: "#fff0c9", image: "img/signature-box.jpg" },
+    { id: 8, name: "Belgian Waffle", desc: "Crispy waffle with maple syrup and butter", price: 6.75, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fbe7bd", image: "img/belgian-waffle.jpg" },
+    { id: 9, name: "Strawberry Waffle", desc: "Waffle topped with fresh strawberries and cream", price: 8.25, unit: "1 pc", category: "Waffle", emoji: "🧇", color: "#fcd9de", image: "img/smoke-croissant.jpg" },
+    { id: 10, name: "Cappuccino", desc: "Espresso with steamed milk foam", price: 3.5, unit: "cup", category: "Ice Cream", emoji: "☕", color: "#e9dccf", image: "img/cappuccino.jpg" },
+    { id: 11, name: "Iced Latte", desc: "Cold espresso with milk over ice", price: 4.0, unit: "cup", category: "Coffee", emoji: "🧋", color: "#e4ecef", image: "img/iced-latte.jpg" }
 ];
 
 const categories = [
