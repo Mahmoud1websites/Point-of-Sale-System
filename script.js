@@ -34,6 +34,47 @@ const DISCOUNT_LIMIT = 100;
 const DISCOUNT_RATE = 0.1;
 const TAX_RATE = 0.06;     // set to 0 if you do not want tax
 
+const STORAGE_KEY = "pos_custom_products";
+
+function saveCustomProducts() {
+    const custom = products.filter(function (p) { return p.id >= 1000; });
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(custom));
+        return true;
+    } catch (e) {
+        alert("Storage is full. Use a smaller image or delete some products.");
+        return false;
+    }
+}
+
+function loadCustomProducts() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        for (let i = 0; i < saved.length; i++) {
+            products.push(saved[i]);
+            if (saved[i].id >= nextCustomId) nextCustomId = saved[i].id + 1;
+        }
+    } catch (e) {
+        localStorage.removeItem(STORAGE_KEY);
+    }
+}
+
+function resizeImage(dataUrl, maxSize, callback) {
+    const img = new Image();
+    img.onload = function () {
+        const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.width * scale);
+        canvas.height = Math.round(img.height * scale);
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        callback(canvas.toDataURL("image/jpeg", 0.8));
+    };
+    img.src = dataUrl;
+}
+
 // ---------- DOM ELEMENTS ----------
 const productsEl = document.querySelector("#products");
 const categoriesEl = document.querySelector("#categories");
@@ -68,7 +109,6 @@ function calculateSubtotal() {
     }
     return sum;
 }
-
 function countItems() {
     let count = 0;
     for (let i = 0; i < order.length; i++) count += order[i].quantity;
@@ -79,6 +119,18 @@ function calculateDiscount(subtotal) {
     if (subtotal > DISCOUNT_LIMIT) return subtotal * DISCOUNT_RATE;
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // returns an object with every number the screen and receipt need
 function calculateTotals() {
@@ -94,6 +146,12 @@ function thumbHTML(item) {
     }
     return '<div class="thumb" style="background:' + item.color + '">' + item.emoji + "</div>";
 }
+
+
+
+
+
+
 
 // ---------- RENDERING ----------
 function renderCategories() {
@@ -236,6 +294,55 @@ function clearOrder() {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let pendingImage = "";   // data URL of the image the cashier picked
 
 function handleImagePick(event) {
@@ -256,13 +363,30 @@ function handleImagePick(event) {
     }
     const reader = new FileReader();
     reader.onload = function () {
-        pendingImage = reader.result;
-        preview.src = pendingImage;
-        preview.classList.remove("hidden");
-        label.textContent = file.name;
+        resizeImage(reader.result, 400, function (small) {
+            pendingImage = small;
+            preview.src = pendingImage;
+            preview.classList.remove("hidden");
+            label.textContent = file.name;
+        });
     };
     reader.readAsDataURL(file);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function addCustomProduct() {
     const nameInput = document.querySelector("#custom-name");
@@ -284,8 +408,12 @@ function addCustomProduct() {
         id: nextCustomId, name: name, desc: "New product", price: price, unit: unit,
         category: categoryInput.value, emoji: "🛍️", color: "#eeeeee", image: pendingImage
     };
-    nextCustomId++;
     products.push(product);
+    if (!saveCustomProducts()) {
+        products.pop();
+        return;
+    }
+    nextCustomId++;
 
     // make sure the new product is visible on the dashboard
     if (activeCategory !== "All" && activeCategory !== product.category) {
@@ -303,6 +431,23 @@ function addCustomProduct() {
     document.querySelector("#image-preview").classList.add("hidden");
     document.querySelector("#file-label").textContent = "Upload image from your computer";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------- SALE / RECEIPT ----------
 function completeSale() {
@@ -370,10 +515,25 @@ document.querySelector("#history-list").addEventListener("click", function (even
         renderHistory();
     }
 });
+
+
+
+
+
+
 productsEl.addEventListener("click", function (event) {
     const btn = event.target.closest("[data-add]");
     if (btn) addToOrder(findProduct(Number(btn.getAttribute("data-add"))));
 });
+
+
+
+
+
+
+
+
+
 
 categoriesEl.addEventListener("click", function (event) {
     const btn = event.target.closest("[data-cat]");
@@ -411,6 +571,7 @@ document.querySelector("#new-order-btn").addEventListener("click", startNewOrder
 
 // ---------- START ----------
 document.querySelector("#tax-rate").textContent = (TAX_RATE * 100) + "%";
+loadCustomProducts();   // <-- add this
 renderCategories();
 renderProducts();
 renderOrder();

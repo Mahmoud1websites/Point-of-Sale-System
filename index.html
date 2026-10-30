@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>POS System</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="app">
     <nav class="sidebar" aria-label="Main">
       <img class="logo" src="img/logo.svg" alt="POS logo">
 
       <button class="nav-btn active" title="Menu" aria-label="Menu">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+        </svg>
       </button>
 
       <button class="nav-btn" id="history-btn" title="Sales history" aria-label="Sales history">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 12a9 9 0 1 0 3-6.7" />
+          <path d="M3 4v5h5" />
+          <path d="M12 7v5l3 2" />
+        </svg>
       </button>
 
       <button class="nav-btn" id="custom-btn" title="Add product" aria-label="Add product">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 8v8M8 12h8" />
+        </svg>
       </button>
     </nav>
 
@@ -28,7 +42,7 @@
       <header class="head">
         <div>
           <h1>Welcome, Cashier</h1>
-          <p class="sub">POS System · <span id="clock"></span></p>
+          <p class="sub">POS System </p>
         </div>
         <div class="search-row">
           <input type="text" id="search" placeholder="Search product...">
@@ -106,12 +120,17 @@
       <button id="new-order-btn" class="pay">Finish and start new order</button>
     </div>
   </div>
-<button id="cart-fab" class="cart-fab" aria-label="Open order">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H6"/></svg>
-  <span id="fab-count">0</span>
-</button>
+  <button id="cart-fab" class="cart-fab" aria-label="Open order">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="9" cy="20" r="1.5" />
+      <circle cx="18" cy="20" r="1.5" />
+      <path d="M2 3h3l2.7 12.4a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 7H6" />
+    </svg>
+    <span id="fab-count">0</span>
+  </button>
 
-<script src="script.js"></script>
-<script src="order-drawer.js"></script>
+  <script src="script.js"></script>
+  <script src="order-drawer.js"></script>
 </body>
+
 </html>
